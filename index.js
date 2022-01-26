@@ -38,7 +38,7 @@ app.get("/products/:productId/offers", async (req, res) => {
     const response = await request(
       `${generateScraperUrl(
         api_key
-      )}&url=https://www.amazon.de/product-reviews/${productId}`
+      )}&url=https://www.amazon.de/gp/offer-listing/${productId}`
     );
     res.json(JSON.parse(response));
   } catch (error) {
@@ -55,7 +55,7 @@ app.get("/products/:productId/reviews", async (req, res) => {
     const response = await request(
       `${generateScraperUrl(
         api_key
-      )}&url=https://www.amazon.de/gp/offer-listing/${productId}`
+      )}&url=https://www.amazon.de/product-reviews/${productId}`
     );
     res.json(JSON.parse(response));
   } catch (error) {
